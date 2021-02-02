@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Repository
 public class MemoryProjectRepository implements ProjectRepository{
@@ -27,10 +28,9 @@ public class MemoryProjectRepository implements ProjectRepository{
     }
 
     @Override
-    public Optional<Project> findByProjects(String fw) {
-        Optional<Project> getProject = store.values().stream().
-                filter(project -> project.getfw().equals(fw))
-                .findAny();
+    public Stream<Project> findByProjects(String fw) {
+        Stream<Project> getProject = store.values().stream().
+                filter(project -> project.getfw().equals(fw));
 
         return getProject;
     }

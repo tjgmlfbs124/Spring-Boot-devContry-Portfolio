@@ -13,11 +13,11 @@ public class HomeController {
 
     public HomeController(ProjectService projectService) {
         this.projectService = projectService;
-        generateProjects();
     }
 
     @GetMapping("/")
     public String home(){
+        generateProjects();
         return "index";
     }
 
@@ -34,7 +34,6 @@ public class HomeController {
         project.setImages(arrayList);
 
         projectService.submit(project);
-
         System.out.println("[Home] project.getTitle() = " + project.getTitle());
         System.out.println("[Home] project.getId() = " + project.getId());
 

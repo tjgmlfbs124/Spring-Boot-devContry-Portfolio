@@ -4,11 +4,12 @@ import com.example.devContry.domain.Project;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public interface ProjectRepository {
     Project submit(Project project);
     Optional<Project> findByProject(Long id);
-    Optional<Project> findByProjects(String fw);
+    Stream<Project> findByProjects(String fw);
     List<Project> findAll();
 
 }

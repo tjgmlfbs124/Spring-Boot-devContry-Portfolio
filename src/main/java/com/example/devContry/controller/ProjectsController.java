@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Controller
 public class ProjectsController {
@@ -20,9 +21,10 @@ public class ProjectsController {
     @GetMapping("/projects")
     public String projects(@RequestParam("fw") String fw, Model model){
         System.out.println("[project Controller]fw = " + fw);
-        Optional<Project> projects = projectService.findProjects(fw);
-        System.out.println("projects.toString() = " + projects.get().getTitle());
-        model.addAttribute("projects", projects);
+        Stream<Project> projects = projectService.findProjects(fw);
+        System.out.println("projects.toArray().length = " + projects.toArray().length);
+
+        model.addAttribute("projects", projects.toArray());
         return "projects";
     }
 }
