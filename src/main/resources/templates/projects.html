@@ -14,16 +14,12 @@
         <!-- Header -->
         <div class="heading">
             <h2 class="head-text">
-                <span>work's</span>
+                <span>Projects</span>
                 <span>subtitle</span>
             </h2>
             <ul class="breadcrumb page-transition">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" >Home</a></li>
                 <li><a href="/" >Projects</a></li>
-                <li><a href="/" th:text>Projects</a></li>
-                <li class="current-crumb" th:each="project : ${proj}">
-                    <a href="#" th:text="${project.title}">aa</a>
-                </li>
             </ul>
         </div>
         <!-- /Header -->
@@ -32,75 +28,31 @@
             <div class="line"></div>
             <div class="works-content page-transition">
                 <div id="filters">
-                    <button class="btn-filter current" data-filter="*">show all</button>
-                    <button class="btn-filter" data-filter=".sort-1">sort #1</button>
-                    <button class="btn-filter" data-filter=".sort-2">sort #2</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, null)} ? 'current'" data-filter="*">All</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, 'spring-boot')} ? 'current'" data-filter=".spring-boot">Spring-Boot</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, 'nodejs')} ? 'current'" data-filter=".nodejs">NodeJS</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, 'php')} ? 'current'" data-filter=".php">PHP</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, 'android')} ? 'current'" data-filter=".android">Android</button>
+                    <button class="btn-filter" th:classappend="${#strings.equals(param.fw, 'arduino')} ? 'current'" data-filter=".arduino">Arduino</button>
                 </div>
                 <ul class="grid">
-                    <li class="grid-item col-md-6 col-sm-6 col-xs-12 sort-1">
-                        <a href="project-video.html">
+                    <li class="grid-item col-md-6 col-sm-6 col-xs-12" th:classappend="${project.fw}" th:each="project : ${projects}">
+                        <a th:href="'/project?fw=' + ${project.fw} + '&id=' + ${project.id}">
                             <img src="images/works/thumb/work.png" alt="img-desc">
                             <div class="grid-overlay">
                                 <div class="work-text">
-                                    <span class="work-cat">Poster</span>
+                                    <span class="work-cat" th:text="${project.fw}"></span>
                                     <div class="work-name">
-                                        <h3>Lorem Ipsum</h3>
+                                        <h3 th:text="${project.title}"></h3>
                                         <span class="triangle">
-                                                        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-                                                    </span>
+                                            <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="grid-item col-md-6 col-sm-6 col-xs-12 sort-2">
-                        <a href="project-video.html">
-                            <img src="images/works/thumb/work.png" alt="img-desc">
-                            <div class="grid-overlay">
-                                <div class="work-text">
-                                    <span class="work-cat">Poster</span>
-                                    <div class="work-name">
-                                        <h3>Lorem Ipsum</h3>
-                                        <span class="triangle">
-                                                        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-                                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="grid-item col-md-6 col-sm-6 col-xs-12 sort-1">
-                        <a href="project-video.html">
-                            <img src="images/works/thumb/work.png" alt="img-desc">
-                            <div class="grid-overlay">
-                                <div class="work-text">
-                                    <span class="work-cat">Poster</span>
-                                    <div class="work-name">
-                                        <h3>Lorem Ipsum</h3>
-                                        <span class="triangle">
-                                                        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-                                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="grid-item col-md-6 col-sm-6 col-xs-12 sort-2">
-                        <a href="project-video.html">
-                            <img src="images/works/thumb/work.png" alt="img-desc">
-                            <div class="grid-overlay">
-                                <div class="work-text">
-                                    <span class="work-cat">Poster</span>
-                                    <div class="work-name">
-                                        <h3>Lorem Ipsum</h3>
-                                        <span class="triangle">
-                                                        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-                                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+
                 </ul>
                 <div class="more">
                     <a href="#" class="button">
@@ -114,6 +66,7 @@
 
     </main>
     <!-- /Container -->
+
 </div>
 <!-- /Wrapper -->
 
