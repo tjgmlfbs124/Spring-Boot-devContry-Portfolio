@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -19,9 +20,19 @@ public class ProjectsController {
     }
 
     @GetMapping("/projects")
-    public String projects(@RequestParam("fw") String fw, Model model){
-        Stream<Project> projects = projectService.findProjects(fw);
-        model.addAttribute("proj", projects.iterator());
+    public String projects(Model model){
+        model.addAttribute("projects", projectService.findAll());
         return "projects";
+    }
+
+    @GetMapping("project")
+    public String project(@RequestParam("id") Long id, Model model){
+        Optional<Project> project = projectService.findProject(id);
+        projectService.findProject(id)
+                .ifPresent(m -> {
+                            model.addAttribute("project", project.get());
+                            model.addAttribute("framework", project.get().getFw());
+                        });
+        return "project";
     }
 }
