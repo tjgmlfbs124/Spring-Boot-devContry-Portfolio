@@ -3,10 +3,7 @@ package com.example.devContry.repository;
 import com.example.devContry.domain.Project;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
 
@@ -25,19 +22,19 @@ public class MemoryProjectRepository implements ProjectRepository{
     @Override
     public Optional<Project> findByProject(Long id) {
 
-        return Optional.empty();
+        return Optional.ofNullable(store.get(id));
     }
 
     @Override
     public Stream<Project> findByProjects(String fw) {
         Stream<Project> getProject = store.values().stream().
-                filter(project -> project.getfw().equals(fw));
-
+                filter(project -> project.getFw().equals(fw));
         return getProject;
     }
 
     @Override
     public List<Project> findAll() {
-        return null;
+        ArrayList projects = new ArrayList<>(store.values());
+        return projects ;
     }
 }
