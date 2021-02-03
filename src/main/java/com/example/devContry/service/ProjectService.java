@@ -4,6 +4,7 @@ import com.example.devContry.domain.Project;
 import com.example.devContry.repository.ProjectRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -27,4 +28,9 @@ public class ProjectService {
     public Stream<Project> findProjects(String fw){
         return projectRepository.findByProjects(fw);
     }
+
+    public List<Project> findAll(){
+        return projectRepository.findAll();
+    }
+
 }
