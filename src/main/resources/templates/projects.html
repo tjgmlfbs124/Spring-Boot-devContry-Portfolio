@@ -19,9 +19,10 @@
             </h2>
             <ul class="breadcrumb page-transition">
                 <li><a href="/">Home</a></li>
-                <li><a href="/" >Projects22</a></li>
-                <li class="current-crumb" th:each="project : ${projects}">
-                    <a href="#" >aa</a>
+                <li><a href="/" >Projects</a></li>
+                <li><a href="/" th:text>Projects</a></li>
+                <li class="current-crumb" th:each="project : ${proj}">
+                    <a href="#" th:text="${project.title}">aa</a>
                 </li>
             </ul>
         </div>

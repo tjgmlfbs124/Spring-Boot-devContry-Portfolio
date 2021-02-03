@@ -20,11 +20,8 @@ public class ProjectsController {
 
     @GetMapping("/projects")
     public String projects(@RequestParam("fw") String fw, Model model){
-        System.out.println("[project Controller]fw = " + fw);
         Stream<Project> projects = projectService.findProjects(fw);
-        System.out.println("projects.toArray().length = " + projects.toArray().length);
-
-        model.addAttribute("projects", projects.toArray());
+        model.addAttribute("proj", projects.iterator());
         return "projects";
     }
 }
