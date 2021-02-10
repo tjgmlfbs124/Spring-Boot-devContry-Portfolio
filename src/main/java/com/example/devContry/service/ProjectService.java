@@ -17,20 +17,12 @@ public class ProjectService {
         this.projectRepository = projectRepository;
     }
 
-    public void submit(Project project){
-        projectRepository.submit(project);
-    }
-
-    public Optional<Project> findProject(Long id){
-        return projectRepository.findByProject(id);
-    }
-
-    public Stream<Project> findProjects(String fw){
-        return projectRepository.findByProjects(fw);
-    }
-
     public List<Project> findAll(){
         return projectRepository.findAll();
+    }
+
+    public Optional<Project> findById(Long id){
+        return projectRepository.findById(id);
     }
 
 }
