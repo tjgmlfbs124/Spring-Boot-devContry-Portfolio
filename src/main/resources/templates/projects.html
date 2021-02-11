@@ -42,7 +42,7 @@
 <!--                            <a class="grid-sticker">123123</a>-->
                             <div class="grid-overlay">
                                 <div class="work-text">
-                                    <span class="work-cat" th:text="${project.fw}"></span>
+                                    <span class="work-cat" th:text="${#strings.toUpperCase(project.fw)}"></span>
                                     <div class="work-name">
                                         <h3 th:text="${project.title}"></h3>
                                         <span class="triangle">
