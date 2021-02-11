@@ -38,7 +38,8 @@
                 <ul class="grid">
                     <li class="grid-item col-md-6 col-sm-6 col-xs-12" th:classappend="${project.fw}" th:each="project : ${projects}">
                         <a th:href="'/project?fw=' + ${project.fw} + '&id=' + ${project.id}">
-                            <img src="images/works/thumb/work.png" alt="img-desc">
+                            <img th:src="'/images/ui/' + ${project.fw} + '/' + ${project.id} + '/main.jpg'" alt="img-desc">
+<!--                            <a class="grid-sticker">123123</a>-->
                             <div class="grid-overlay">
                                 <div class="work-text">
                                     <span class="work-cat" th:text="${project.fw}"></span>

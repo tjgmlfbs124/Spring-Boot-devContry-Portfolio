@@ -13,6 +13,10 @@ public class Project {
     private String title;               // 제목
     private String fw;                  // 프레임워크
     private Long views;                 // 조회수
+    private String date;
+    private String tag;
+    private String team;
+
 
     public Long getId() {
         return id;
@@ -44,5 +48,29 @@ public class Project {
 
     public void setViews(Long views) {
         this.views = views;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 }

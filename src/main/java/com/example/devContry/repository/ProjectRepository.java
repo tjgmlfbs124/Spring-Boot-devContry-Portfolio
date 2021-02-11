@@ -10,4 +10,5 @@ import java.util.stream.Stream;
 public interface ProjectRepository {
     Optional<Project> findById(Long id);
     List<Project> findAll();
+    List<Project> findByFw(String fw);
 }

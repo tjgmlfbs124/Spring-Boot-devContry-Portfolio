@@ -1,0 +1,16 @@
+<div class="pager col-md-12 page-transition">
+    <a th:href="'/project?fw=' + ${project.fw} + '&id=' + ${pager.prev.id}" class="button prev">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+    <a th:href="'/projects?fw=' + ${project.fw}" class="button all">
+        <i class="fa fa-th"></i>
+    </a>
+    <a th:href="'/project?fw=' + ${project.fw} + '&id=' + ${pager.next.id}" class="button next">
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    <div class="arrow-texts">
+        <p class="prev-text" th:text="${pager.prev.id} == ${project.id} ? '이전 게시물이 없습니다.' : '이전 게시물 : ' + ${pager.prev.title}"></p>
+        <p class="all-text" th:text="${#strings.toUpperCase(project.fw)} + ' 프로젝트 모두보기'"></p>
+        <p class="next-text" th:text="${pager.next.id} == ${project.id} ? '다음 게시물이 없습니다.' : '다음 게시물 : ' + ${pager.next.title}"></p>
+    </div>
+</div>

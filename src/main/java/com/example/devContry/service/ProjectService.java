@@ -25,4 +25,8 @@ public class ProjectService {
         return projectRepository.findById(id);
     }
 
+    public List<Project> findByFrameWorks(String fw){
+        return projectRepository.findByFw(fw);
+    }
+
 }

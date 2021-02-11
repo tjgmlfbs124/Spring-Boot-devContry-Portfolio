@@ -28,4 +28,12 @@ public class MySQLProjectRepository implements ProjectRepository{
                 .setParameter("id",id)
                 .getResultList().stream().findAny();
     }
+
+    @Override
+    public List<Project> findByFw(String fw) {
+
+        return em.createQuery("select m from Project m where fw = :fw", Project.class)
+                .setParameter("fw",fw)
+                .getResultList();
+    }
 }

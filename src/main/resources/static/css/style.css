@@ -939,12 +939,23 @@ margin: 0 auto 5px;
  * 05. Gallery grid
  */
 
+
 /* Work grid */
 .grid{
     visibility: hidden;
     background: red;
     display: block;
     margin: 0 -15px 40px;
+}
+.grid-sticker{
+    position:absolute;
+    top:20px;
+    font-size:15px;
+    color:#fff;
+    font-weight:bold;
+    padding:5px 10px 5px 10px;
+    background-color: rgba(15, 191, 230, .7);
+
 }
 .grid-overlay{
     background-color: rgba(15, 191, 230, .7);
