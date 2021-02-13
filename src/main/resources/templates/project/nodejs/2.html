@@ -30,28 +30,25 @@
             <div class="row">
                 <div class="content-box">
                     <div class="project-content">
-                        <!-- 프로젝트 이미지 -->
                         <div th:replace="widget/project_image"></div>
-
                         <div class="project-info col-sm-12 col-lg-6" id="sticky" style="padding-bottom:100px;">
                             <h2>프로젝트 개요</h2>
                             <p style="margin-bottom:10px;">
-                                가입된 회원들에게 직원할인가를 추가로 적용하여, 저렴한 휴대폰을
-                                사용자들에게 제공하고, 선택한 요금제 및 옵션등의 견적을 한 눈에 볼 수 있는 웹사이트를 제작<br><br>
-
-                                해당 프로젝트는 유료 웹템플릿 소스코드 (HTML, CSS, SCSS, JS)를 구매하고, PHP 코드로 재구현하여 제작되었습니다.
+                                거제도의 지정된 펜션에 고객들이 예약을하면, <br>"거제중앙시장"에서 사용할수 있는 상품권을 발행하는 웹기반 시스템<br><br>
+                                펜션에 예약을하면, 시스템이 고객에게 문자로 바코드사진과 번호를 전송<br>
+                                "거제중앙시장" 관리사무소에서 바코드 사진을 보여주면, <br>
+                                담당직원이 바코드를 찍고, <br>
+                                예약할때 저장했던 인원만큼 상품권을 고객에게 나누어준다.
                             </p>
 
                             <h2 style="margin-top:50px;">주요 개발목표</h2>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">MVC 패턴을 기반으로한 PHP 구조</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">'pdo' 모듈을 활용한 DB접근 제어</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">JQuery, Javascript를 활용한 할인품목, 옵션 선택시 실시간 가격 제공</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">SheetJS 라이브러리를 활용하여 요금제,단말기,할인가등 Excel로 관리</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">Excel <-> MysqlDB 포맷화</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">선택한 옵션 및 단말기의 견적을 DB에 저장하고 언제든 조회</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">'공유하기'를 통해 사용자의 견적서를 다른 사람에게 전송</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">유지 보수를 위한 관리자페이지 제작</span></i></p>
-                            <p style="margin-bottom:10px;"><i class="fa fa fa-pencil" aria-hidden="true"><span style="margin-left:10px;">새 요금제, 새 단말기 출시등 데이터 유지보수를 위한 스키마관계 정립</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">JSON에 특화된 MongoDB를 이용한 데이터베이스 개발</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"Mongoose" 모듈을 화용한 MonogDB 제어</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">App, Router, Model, View 독립적 구조개발</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"nodemailer" 모듈을 활용한 메일서비스</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"barcode-generator" 모듈을 활용한 바코드생성</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"canvas","fs" 모듈을 활용한 barcode 이미지처리</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"crypto" 모듈을 활용한 상품권 번호 암호화</span></i></p>
 
                             <h2 style="margin:50px 0px 30px 0px;">Dev part</h2>
                             <div class="about-skills" style="margin:0px 0px 100px 0px;">
@@ -61,31 +58,27 @@
                                         <div class="skill-bar" data-bar="100"><span></span></div>
                                     </div>
                                     <div class="skill">
-                                        <p style="margin-bottom:10px;">CSS</p>
-                                        <div class="skill-bar" data-bar="20"><span></span></div>
-                                    </div>
-                                    <div class="skill">
-                                        <p style="margin-bottom:10px;">HTML</p>
-                                        <div class="skill-bar" data-bar="30"><span></span></div>
-                                    </div>
-                                    <div class="skill">
                                         <p style="margin-bottom:10px;">JQuery</p>
                                         <div class="skill-bar" data-bar="100"><span></span></div>
                                     </div>
                                     <div class="skill">
-                                        <p style="margin-bottom:10px;">PHP</p>
+                                        <p style="margin-bottom:10px;">Design</p>
+                                        <div class="skill-bar" data-bar="20"><span></span></div>
+                                    </div>
+                                    <div class="skill">
+                                        <p style="margin-bottom:10px;">NodeJS</p>
                                         <div class="skill-bar" data-bar="100"><span></span></div>
                                     </div>
                                     <div class="skill">
-                                        <p style="margin-bottom:10px;">MySQL</p>
-                                        <div class="skill-bar" data-bar="40"><span></span></div>
+                                        <p style="margin-bottom:10px;">MongoDB</p>
+                                        <div class="skill-bar" data-bar="100"><span></span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- detail-->
+                    <!-- detail -->
                     <div th:replace="widget/project_footer"></div>
                 </div>
                 <!-- pager-->
