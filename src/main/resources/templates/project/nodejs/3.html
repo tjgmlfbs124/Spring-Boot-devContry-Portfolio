@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="widget/head :: head"></head>
+<body>
+
+<!-- Wrapper -->
+<div class="wrapper">
+    <!-- Header -->
+    <nav th:replace="widget/header"></nav>
+
+    <!-- Container -->
+    <main class="container">
+
+        <!-- Header -->
+        <div class="heading">
+            <h2 class="head-text">
+                <span th:text="${project.title}"></span>
+                <span th:text="${project.fw} + ' Framework'"></span>
+            </h2>
+            <ul class="breadcrumb page-transition">
+                <li><a href="/">home</a></li>
+                <li><a href="/projects?fw=spring-boot" th:text="${project.fw}"></a></li>
+                <li class="current-crumb"><a href="#" th:text="${project.title}"></a></li>
+            </ul>
+        </div>
+        <!-- /Header -->
+        <!-- Proect page -->
+        <div class="work">
+            <div class="line"></div>
+            <div class="row">
+                <div class="content-box">
+                    <div class="project-content">
+                        <div class="w-img-content col-sm-12 col-lg-6">
+                            <img th:src="'images/ui/' + ${project.fw} + '/' + ${project.id} + '/image01.jpg'" alt="image description" style="margin-bottom:100px; cursor:pointer;"
+                                 th:onclick="newWindowImage([['images/ui/' + ${project.fw} + '/' + ${project.id} + '/image01.jpg']])">
+
+                            <img th:src="'images/ui/' + ${project.fw} + '/' + ${project.id} + '/image02.jpg'" alt="image description" style="margin-bottom:100px; cursor:pointer;"
+                                 th:onclick="newWindowImage([['images/ui/' + ${project.fw} + '/' + ${project.id} + '/image02.jpg']])">
+
+                            <img th:src="'images/ui/' + ${project.fw} + '/' + ${project.id} + '/image03.jpg'" alt="image description" style="margin-bottom:100px; cursor:pointer;"
+                                 th:onclick="newWindowImage([['images/ui/' + ${project.fw} + '/' + ${project.id} + '/image03.jpg']])">
+                        </div>
+
+                        <div class="project-info col-sm-12 col-lg-6" id="sticky" style="padding-bottom:100px;">
+                            <h2>프로젝트 개요</h2>
+                            <p style="margin-bottom:10px;">
+                                초등부 코딩 교육을 위한 블록형태의 웹기반 블록코딩 페이지 개발<br>
+                                드래그앤 드랍으로 블록을 Workspace에 가져다 놓으면, Arduino, Javascript 코드가 자동으로 생성되고
+                                코딩한 블록들을 Run 버튼을 눌러 실행하면, <br>Javascript 코드가 실행되거나, 로봇이 움직임<br>
+                                블루투스 지원, 파일저장 등의 Utill 기능을 지원
+                            </p>
+
+                            <h2 style="margin-top:50px;">주요 개발목표</h2>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"Blockly" 오픈소스를 활용하여 에코서버 형태의 웹페이지 개발</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"Express" 모듈을 활용한 에코서버 구현</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">App, Router, Model, View 독립적 구조개발</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">블록을 쌓을때, 실시간 아두이노 코드로 변환(Arduino Interpreter)</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">블록명세 xml파일을 Customizing하여 카테고리 구현</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">"noBLE" 모듈을 활용한 웹 Bluetooth 구현</span></i></p>
+                            <p style="margin-bottom:10px;"><i class="fa fa-pencil" style="margin-right:20px;" aria-hidden="true"><span style="margin-left:10px;">그 외에, 각종 Javascript 커스텀작업(이미지블록, GIF블록 등등..)</span></i></p>
+
+                            <h2 style="margin:50px 0px 30px 0px;">Dev part</h2>
+                            <div class="about-skills" style="margin:0px 0px 100px 0px;">
+                                <div class="skills">
+                                    <div class="skill">
+                                        <p style="margin-bottom:10px;">JavaScript</p>
+                                        <div class="skill-bar" data-bar="100"><span></span></div>
+                                    </div>
+                                    <div class="skill">
+                                        <p style="margin-bottom:10px;">CSS</p>
+                                        <div class="skill-bar" data-bar="60"><span></span></div>
+                                    </div>
+                                    <div class="skill">
+                                        <p style="margin-bottom:10px;">HTML</p>
+                                        <div class="skill-bar" data-bar="20"><span></span></div>
+                                    </div>
+                                    <div class="skill">
+                                        <p style="margin-bottom:10px;">NodeJS</p>
+                                        <div class="skill-bar" data-bar="100"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- detail -->
+                    <div th:replace="widget/project_footer"></div>
+                </div>
+                <!-- pager-->
+                <div th:replace="widget/project_pager"></div>
+            </div>
+        </div>
+        <!-- /Proect page -->
+
+    </main>
+    <!-- /Container -->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="row">
+            <p class="col-xs-12 col-sm-6 col-md-6">Copyright © 2016 All Rights Reserved.</p>
+            <ul class="follow col-xs-6 col-sm-6 col-md-6 hidden-xs">
+                <li><p>Follow Us</p></li>
+                <li><span></span></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /Footer -->
+</div>
+<!-- /Wrapper -->
+
+<!-- JS -->
+<!-- jquery-2.1.3.min js -->
+<script type="text/javascript" src='js/jquery-2.1.3.min.js'></script>
+
+<!-- Plugins -->
+<script type="text/javascript" src='js/libs.js'></script>
+
+<!-- Main js -->
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+    // 사진 클릭시 새창이동
+    function newWindowImage(url){
+      window.open(url, '_black');
+    }
+
+</script>
+</body>
+</html>
